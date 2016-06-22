@@ -109,23 +109,23 @@
 }
 
 .fadeIn {
-  animation-name: fadeIn;
+  animation: fadeIn 1s;
 }
 
 .bounceIn {
-  animation-name: bounceIn;
+  animation: bounceIn 1s;
 }
 
 .slideRight {
-	animation-name: slideRight;
+	animation: slideRight 1s;
 }
 
 .slideLeft {
-	animation-name: slideLeft;
+	animation: slideLeft 1s;
 }
 
 .zoomIn {
-  animation-name: zoomIn;
+  animation: zoomIn 1s;
 }
 
 /*end animations*/

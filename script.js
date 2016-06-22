@@ -1,8 +1,13 @@
 $('.tabs-header li').on('click', function () {
+  var $currentHeaderItem = $(this);
+	var $parent = $currentHeaderItem.closest('.tabs');
+	var $currentItem = $parent.find('.tabs-content .tabs-item').eq($currentHeaderItem.index());
+	var $activeItem = $parent.find('.tabs-item.active');
 
-	var $parent = $(this).closest('.tabs');
-
+	$activeItem.removeClass($activeItem.data('class'));
 	$parent.find('li, .tabs-item').removeClass('active');
-	$(this).addClass('active');
-	$parent.find('.tabs-content .tabs-item').eq($(this).index()).addClass('active');
+
+	$currentHeaderItem.addClass('active');
+	$currentItem.addClass('active');
+	$currentItem.addClass($currentItem.data('class'));
 });
