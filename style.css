@@ -1,0 +1,57 @@
+.tabs:before,
+.tabs:after,
+.tabs-content:before,
+.tabs-content:after {
+   content: "";
+   display: table;
+}
+.tabs:after,
+.tabs-content:after {
+   clear: both;
+}
+
+.tabs {
+   zoom: 1;
+}
+
+.tabs-content {
+    position: relative;
+    zoom: 1;
+}
+
+.tabs-content .tabs-item {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+}
+
+.tabs-content .tabs-item.active {
+    opacity: 1;
+    transition: opacity .4s ease-in-out;
+    position: relative;
+}
+
+.tabs-header {
+	float: left;
+	width: 40%;
+	padding: 12px;
+}
+
+.tabs-content {
+	float: right;
+	width: 60%;
+}
+
+.tabs-header ul {
+	list-style-type: none;
+	margin-right: 20px;
+	padding-left: 0;
+}
+
+.tabs-header ul li {
+	padding: 6px 12px;
+}
+
+.tabs-header ul li.active {
+	background-color: #ccc;
+}
