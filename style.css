@@ -2,34 +2,133 @@
 .tabs:after,
 .tabs-content:before,
 .tabs-content:after {
-   content: "";
-   display: table;
+	content: "";
+	display: table;
 }
 .tabs:after,
 .tabs-content:after {
-   clear: both;
+	clear: both;
 }
 
-.tabs {
-   zoom: 1;
+.tabs,
+.tabs-content {
+	zoom: 1;
 }
 
 .tabs-content {
-    position: relative;
-    zoom: 1;
+	position: relative;
 }
 
 .tabs-content .tabs-item {
-    position: absolute;
-    top: 0;
-    opacity: 0;
+	position: absolute;
+	opacity: 0;
 }
 
 .tabs-content .tabs-item.active {
-    opacity: 1;
-    transition: opacity .4s ease-in-out;
-    position: relative;
+	position: relative;
+	opacity: 1;
 }
+
+/*Animations*/
+/*animations developed by daneden http://daneden.github.io/animate.css*/
+
+@keyframes slideRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(.97, .97, .97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+.bounceIn {
+  animation-name: bounceIn;
+}
+
+.slideRight {
+	animation-name: slideRight;
+}
+
+.slideLeft {
+	animation-name: slideLeft;
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+}
+
+/*end animations*/
 
 .tabs-header {
 	float: left;
